@@ -287,10 +287,11 @@ function UserModal({ row, onClose, onSaved }) {
             <label className="block">
               <div className="muted text-xs mb-1">Username</div>
               <input
-                className="input w-full"
+                className="input w-full disabled:opacity-50 disabled:cursor-not-allowed" // แนะนำให้เพิ่มสไตล์สำหรับตอน disabled ไว้ด้วยครับ
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
                 required
+                disabled={!!row} // 🌟 เพิ่มบรรทัดนี้เพื่อล็อกไม่ให้แก้ไขตอน Edit
                 onInvalid={e => e.target.setCustomValidity("Please fill in all the information.")}
                 onInput={e => e.target.setCustomValidity("")}
               />

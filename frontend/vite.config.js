@@ -7,10 +7,10 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: 'http://localhost:8000',
+        target: 'http://backend:8000',
         changeOrigin: true,
       },
-      '/uploads': 'http://localhost:8000',
+      '/uploads': 'http://backend:8000',
     },
   },
 });
